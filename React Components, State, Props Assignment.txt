@@ -42,6 +42,7 @@ export default ParentComponent;
 In the above example, the `text` prop is passed to the `MyComponent` child component. Inside the `MyComponent`, it can be accessed as `props.text`. 
 Props can also be passed to functional components as function arguments. 
 These are the basic concepts of components, state, and props in React. They are essential for building dynamic and interactive user interfaces. 
+
  
  
  
