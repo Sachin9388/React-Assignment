@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* label,
+        input,
+        button {
+            margin: 10px;
+        }
+         */
+        /* #subtotalDisplay {
+            margin-top: 20px;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div>
+                <label for="unitPrice">Unit Price:</label>
+                <input type="number" id="unitPrice" step="0.01" min="0" required>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="0" required>
+
+                <button onclick="calculateSubtotal()">Calculate Subtotal</button>
+
+                <div id="subtotalDisplay">
+                    <p>Subtotal: $<span id="subtotal">0</span></p>
+                </div>
+            </div>
+
+            <div>
+                <label for="unitPricetwo">Unit Price:</label>
+                <input type="number" id="unitPricetwo" step="0.01" min="0" required>
+
+                <label for="quantitytwo">Quantity:</label>
+                <input type="number" id="quantitytwo" min="0" required>
+
+                <button onclick="calculateSubtotaltwo()">Calculate Subtotal</button>
+
+                <div id="subtotaltwoDisplay">
+                    <p>Subtotal: $<span id="subtotaltwo">0</span></p>
+                </div>
+            </div>
+
+            <div>
+                <label for="unitPricethree">Unit Price:</label>
+                <input type="number" id="unitPricethree" step="0.01" min="0" required>
+
+                <label for="quantitythree">Quantity:</label>
+                <input type="number" id="quantitythree" min="0" required>
+
+                <button onclick="calculateSubtotalthree()">Calculate Subtotal</button>
+
+                <div id="subtotalthreeDisplay">
+                    <p>Subtotal: $<span id="subtotalthree">0</span></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function calculateSubtotal() {
+            const unitPriceInput = document.getElementById("unitPrice");
+            const quantityInput = document.getElementById("quantity");
+            const subtotalDisplay = document.getElementById("subtotal");
+
+            const unitPrice = parseFloat(unitPriceInput.value);
+            const quantity = parseInt(quantityInput.value);
+
+            if (!isNaN(unitPrice) && !isNaN(quantity)) {
+                const subtotal = unitPrice * quantity;
+                subtotalDisplay.textContent = subtotal.toFixed(2);
+            } else {
+                subtotalDisplay.textContent = "Invalid input";
+            }
+        }
+        function calculateSubtotaltwo() {
+            const unitPricetwoInput = document.getElementById("unitPricetwo");
+            const quantitytwoInput = document.getElementById("quantitytwo");
+            const subtotaltwoDisplay = document.getElementById("subtotaltwo");
+
+            const unitPricetwo = parseFloat(unitPricetwoInput.value);
+            const quantitytwo = parseInt(quantitytwoInput.value);
+
+            if (!isNaN(unitPricetwo) && !isNaN(quantitytwo)) {
+                const subtotaltwo = unitPricetwo * quantitytwo;
+                subtotaltwoDisplay.textContent = subtotaltwo.toFixed(3);
+            } else {
+                subtotaltwoDisplay.textContent = "Invalid input";
+            }
+        }
+        function calculateSubtotalthree() {
+            const unitPricethreeInput = document.getElementById("unitPricethree");
+            const quantitythreeInput = document.getElementById("quantitythree");
+            const subtotalthreeDisplay = document.getElementById("subtotalthree");
+
+            const unitPricethree = parseFloat(unitPricethreeInput.value);
+            const quantitythree = parseInt(quantitythreeInput.value);
+
+            if (!isNaN(unitPricethree) && !isNaN(quantitythree)) {
+                const subtotalthree = unitPricethree * quantitythree;
+                subtotalthreeDisplay.textContent = subtotalthree.toFixed(4);
+            } else {
+                subtotalthreeDisplay.textContent = "Invalid input";
+            }
+        }
+
+    </script>
+</body>
+
+</html>
